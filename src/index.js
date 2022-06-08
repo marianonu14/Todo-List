@@ -1,3 +1,6 @@
-import './style.css';
+import './scss/style.scss';
+import 'bootstrap';
 
-console.log("probando...");
+const title = document.querySelector('#title');
+title.className = 'display-1';
+
