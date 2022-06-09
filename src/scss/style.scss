@@ -1,12 +1,8 @@
 @use 'custom';
 
+
 html,body {
     min-height: 100%;
-    background-image: url(../img/background.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
   }
 
 #content {
@@ -25,4 +21,8 @@ html,body {
 
 .opacity {
   opacity: 0.95;
+}
+
+.main-container {
+  
 }

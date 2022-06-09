@@ -8,15 +8,33 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
+
     <nav class="navbar navbar-dark bg-dark opacity">
       <div class="container-fluid d-flex justify-content-center justify-content-md-between gap-3 px-5">
         <div class="bg-primary icon"></div>
         <a class="navbar-brand" href="#">ToDoApp List</a>
       </div>
     </nav>
+
     <div class="row m-4 d-flex justify-content-evenly align-baseline" id="content">
-      <div class="border rounded shadow p-3 my-3 bg-body rounded col-md-3 bg-light opacity">dsadsad</div>
-      <div class="border rounded shadow p-3 my-3 bg-body rounded col-md-8 bg-light opacity"><i class="bi bi-alt"></i></div>
+      <div class="aside-container border rounded shadow p-3 my-3 rounded col-md-3 bg-secondary text-light opacity">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4">Home</a>
+          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4">Today</a>
+          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4">Week</a>
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-container border rounded shadow p-3 my-3 rounded col-md-8 bg-secondary opacity">sdadad</div>
     </div>
+
 </body>
 </html>
