@@ -19,31 +19,51 @@
     <div class="row m-4 d-flex justify-content-evenly" id="content">
       <aside class="border rounded shadow p-3 my-3 rounded col-md-3 bg-secondary text-light opacity">
         <div class="list-group flex-row flex-md-column gap-2 gap-md-0 rounded">
-          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Home</a>
-          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Today</a>
-          <a href="#" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Week</a>
+          <button id="btn-today" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Today</button>
+          <button id="btn-week" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Week</button>
+          <button id="btn-home" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Home</button>
         </div>
         <div class="project-content d-flex flex-column justify-content-between gap-3 rounded">
-          <div class="d-flex bg-primary justify-content-center rounded"><h3 class="py-2 m-auto">Projects</h3></div>
-          <div class="project-list bg-light m-auto p-3 text-dark rounded">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias voluptatem explicabo, saepe consectetur cumque minus, ex illo ullam nisi modi repellat? Consequatur reiciendis vitae ad inventore excepturi officiis facere minus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis provident nam quidem laborum inventore assumenda neque, ullam expedita, maxime porro excepturi. Sequi, incidunt nesciunt! Earum veniam tempora cum numquam quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quisquam amet doloremque eum vitae ex. Nisi enim repellat ipsum, tempore quos debitis aut distinctio minima ipsa quo odio id voluptatibus!</div>
-          <button type="button" class="btn btn-dark "><i class="bi bi-journal-plus"></i> Add a New Project</button>
+          <div class="d-flex bg-primary justify-content-center rounded"><h4 class="py-1 m-auto">Projects</h4></div>
+          <div id="project-list" class="project-list bg-light m-auto p-3 text-dark rounded"></div>
+          <button id="btnModal" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-journal-plus"></i> Add a New Project</button>
         </div>
       </aside>
 
-      <main class="border rounded shadow p-3 my-3 rounded col-md-8 bg-secondary opacity">
-        <div class="main-heaader mt-3 ms-3"><h2 class="text-light">Home</h2></div>
-        <div class="mt-3">
-          <ul class="list-unstyled">
-            <li class="bg-light p-2 rounded">Project 1</li>
-          </ul>
+      <!-- Modal -->
+      <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal">New Project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column gap-2">
+
+              <form id="form">
+                  <div class="input-group mb-3">
+                    <label for="title" class="input-group-text">Title</label>
+                    <input type="text" name="title" id="form-title" class="form-control" placeholder="Project Name">
+                  </div>
+                  <div class="input-group mb-3">
+                    <label for="date" class="input-group-text">Date</label>
+                    <input type="date" name="date" id="form-date" class="form-control">
+                  </div>
+                  <div class="modal-footer">
+                    <button id="btn-newProject" type="submit" class="btn btn-primary" data-bs-dismiss="modal" disabled>Save Changes</button>
+                  </div>
+              </form>
+
+            </div>
+          </div>
         </div>
-        <div class="mt-3">
-          <ul class="list-unstyled">
-            <li class="bg-light p-2 rounded">Project 2</li>
-          </ul>
-        </div>
+      </div>
+
+      <main id="main-container" class="border rounded shadow p-3 my-3 rounded col-md-8 bg-secondary opacity">  
       </main>
     </div>
+
+
 
 </body>
 </html>
