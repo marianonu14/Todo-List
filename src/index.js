@@ -1,10 +1,9 @@
 import './scss/style.scss';
 import 'bootstrap';
-import Main from './pages/Main'
-import Home from './pages/Home'
-import AddProject from './pages/AddProject'
+import Main from './modules/Main'
+import Home from './modules/Home'
+import AddProject from './modules/AddProject'
 
-const content = document.querySelector ('#main-container');
 const btnToday = document.querySelector ('#btn-today');
 const btnWeek = document.querySelector ('#btn-week');
 const btnHome = document.querySelector ('#btn-home');

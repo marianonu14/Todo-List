@@ -17,6 +17,7 @@
     </nav>
 
     <div class="row m-4 d-flex justify-content-evenly" id="content">
+      <!-- Aside -->
       <aside class="border rounded shadow p-3 my-3 rounded col-md-3 bg-secondary text-light opacity">
         <div class="list-group flex-row flex-md-column gap-2 gap-md-0 rounded">
           <button id="btn-today" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Today</button>
@@ -30,40 +31,35 @@
         </div>
       </aside>
 
-      <!-- Modal -->
-      <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal">New Project</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex flex-column gap-2">
+      <!-- Main Container -->
+      <main id="main-container" class="border rounded shadow p-3 my-3 rounded col-md-8 bg-secondary opacity"></main>
 
+       <!-- Modal -->
+       <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="modal">New Project</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body d-flex flex-column gap-2">
               <form id="form">
                   <div class="input-group mb-3">
-                    <label for="title" class="input-group-text">Title</label>
-                    <input type="text" name="title" id="form-title" class="form-control" placeholder="Project Name">
+                     <label for="title" class="input-group-text">Title</label>
+                     <input type="text" name="title" id="form-title" class="form-control" placeholder="Project Name">
+                   </div>
+                   <div class="input-group mb-3">
+                     <label for="date" class="input-group-text">Date</label>
+                     <input type="date" name="date" id="form-date" class="form-control">
                   </div>
-                  <div class="input-group mb-3">
-                    <label for="date" class="input-group-text">Date</label>
-                    <input type="date" name="date" id="form-date" class="form-control">
-                  </div>
-                  <div class="modal-footer">
+                   <div class="modal-footer">
                     <button id="btn-newProject" type="submit" class="btn btn-primary" data-bs-dismiss="modal" disabled>Save Changes</button>
                   </div>
               </form>
-
             </div>
           </div>
         </div>
       </div>
-
-      <main id="main-container" class="border rounded shadow p-3 my-3 rounded col-md-8 bg-secondary opacity">  
-      </main>
     </div>
-
-
-
 </body>
 </html>
