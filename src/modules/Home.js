@@ -1,3 +1,6 @@
+import {reset, enableBtn} from './Functions';
+import {setLocalStorage, getLocalStorage} from './LocalStorage';
+
 const Home = (data) => {
     
     data.forEach( element => {
@@ -17,7 +20,18 @@ const Home = (data) => {
         const btnRemove = document.createElement("button");
         btnRemove.textContent = "Remove";
         btnRemove.className = "btn btn-danger";
-        
+        btnRemove.id = ('btn-remove');
+
+        btnRemove.addEventListener('click', (e) => {
+            
+            const elementOnClick = e.target.parentElement.children[0].textContent;
+
+            const prueba = data.filter(element => element.title != elementOnClick);
+
+            console.log(prueba);
+        });
+
+    
         mainDiv.appendChild(projectTitle);
         mainDiv.appendChild(projectDate);
         mainDiv.appendChild(btnRemove);

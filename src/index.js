@@ -10,6 +10,7 @@ const btnToday = document.querySelector ('#btn-today');
 const btnWeek = document.querySelector ('#btn-week');
 const btnHome = document.querySelector ('#btn-home');
 
+
 //On Load
 
 let data = getLocalStorage();
