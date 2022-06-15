@@ -1,5 +1,5 @@
 import {reset, enableBtn} from './Functions';
-import {setLocalStorage, getLocalStorage} from './LocalStorage';
+import {deleteLocalStorage} from './LocalStorage';
 
 const Home = (data) => {
     
@@ -23,15 +23,15 @@ const Home = (data) => {
         btnRemove.id = ('btn-remove');
 
         btnRemove.addEventListener('click', (e) => {
-            
+
             const elementOnClick = e.target.parentElement.children[0].textContent;
 
             const prueba = data.filter(element => element.title != elementOnClick);
 
-            console.log(prueba);
+            deleteLocalStorage(prueba);
+        
         });
-
-    
+ 
         mainDiv.appendChild(projectTitle);
         mainDiv.appendChild(projectDate);
         mainDiv.appendChild(btnRemove);

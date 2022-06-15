@@ -1,3 +1,7 @@
+import Home from './Home';
+import AddProject from './AddProject';
+import {reset, enableBtn} from './Functions';
+import Main from './Main';
 
 const setLocalStorage = (object) => {
     
@@ -23,4 +27,23 @@ const getLocalStorage = () => {
     return getArray;
 }
 
-export {setLocalStorage,getLocalStorage};
+const deleteLocalStorage = (newObject) => {
+    window.localStorage.clear();
+
+    if(newObject.length > 0){
+        newObject.forEach(element => {
+            setLocalStorage(element);
+        });
+    
+        reset();
+        Main('Home'); 
+        Home(getLocalStorage());
+        AddProject(getLocalStorage());
+    } else {
+        window.localStorage.clear();
+        reset();
+        Main('Home'); 
+    }
+}
+
+export {setLocalStorage,getLocalStorage,deleteLocalStorage};

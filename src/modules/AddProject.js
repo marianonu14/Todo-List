@@ -1,5 +1,4 @@
 const AddProject = (data) => {
-
     
     data.forEach( element => {
         const contentList = document.querySelector('#project-list');

@@ -20,9 +20,7 @@ window.addEventListener('load', () => {
     if(data != null){
         Home(data);
         AddProject(data);
-    } else {
-        console.log('Esta Vacio');
-    }
+    } 
 })
 
 //Aside Buttons
