@@ -18,15 +18,15 @@
 
     <div class="row m-4 d-flex justify-content-evenly" id="content">
       <!-- Aside -->
-      <aside class="border rounded shadow p-3 my-3 rounded col-md-3 bg-secondary text-light opacity">
-        <div class="list-group flex-row flex-md-column gap-2 gap-md-0 rounded">
+      <aside class="d-flex flex-column justify-content-evenly border rounded shadow p-3 my-3 rounded col-md-3 bg-secondary text-light opacity">
+        <div class="d-flex flex-column justify-content-evenly list-group flex-row flex-md-column gap-2 gap-md-0 rounded h-auto">
           <button id="btn-today" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Today</button>
           <button id="btn-week" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Week</button>
           <button id="btn-home" class="list-group-item list-group-item-action mb-3 text-primary fs-4 rounded">Home</button>
         </div>
-        <div class="project-content d-flex flex-column justify-content-between gap-3 rounded">
+        <div class="d-flex flex-column justify-content-between gap-3 rounded h-75">
           <div class="d-flex bg-primary justify-content-center rounded"><h4 class="py-1 m-auto">Projects</h4></div>
-          <div id="project-list" class="project-list bg-light m-auto p-3 text-dark rounded"></div>
+          <div id="project-list" class="project-list bg-light m-auto p-3 text-dark rounded h-75"></div>
           <button id="btnModal" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-journal-plus"></i> Add a New Project</button>
         </div>
       </aside>
