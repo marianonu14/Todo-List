@@ -1,24 +1,31 @@
 import './scss/style.scss';
 import 'bootstrap';
 import Main from './modules/Main';
-import Home from './modules/Home';
+import Render from './modules/Render';
 import AddProject from './modules/AddProject';
-import {reset, enableBtn} from './modules/Functions';
+import {reset, validationForm, app} from './modules/Functions';
 import {setLocalStorage, getLocalStorage} from './modules/LocalStorage';
 
+//Btn
 const btnToday = document.querySelector ('#btn-today');
 const btnWeek = document.querySelector ('#btn-week');
 const btnHome = document.querySelector ('#btn-home');
 
+//Form
+const formProject = document.querySelector ('#form');
+const formTitle = document.querySelector ('#form-title');
+const formDate = document.querySelector ('#form-date');
+const btnNewProject = document.querySelector ('#btnModal');
+const btnSubmit = document.querySelector ('#btn-newProject');
+
 
 //On Load
-
 let data = getLocalStorage();
 
 window.addEventListener('load', () => {
     Main('Home');
-    if(data != null){
-        Home(data);
+    if(data){
+        Render(data);
         AddProject(data);
     } 
 })
@@ -26,33 +33,31 @@ window.addEventListener('load', () => {
 //Aside Buttons
 
 btnToday.addEventListener('click', () => {
-    reset();
-    Main('Today');
-    AddProject(getLocalStorage());
+    if(data){
+       app('Today');
+    } else {
+        reset();
+        Main('Today');
+    }
 });
 
 btnWeek.addEventListener('click', () => {
-    reset();
-    Main('Week');
-    AddProject(getLocalStorage());
+    if(data){
+        app('Week');
+    } else {
+        reset();
+        Main('Week');
+    }
 });
 
 btnHome.addEventListener('click', () => {
-    reset();
-    Main('Home');
-    Home(getLocalStorage());
-    AddProject(getLocalStorage());
+    if(data){
+        app('Week');
+    } else {
+        reset();
+        Main('Home');
+    }
 });
-
-
-//Form
-
-const formProject = document.querySelector ('#form');
-const formTitle = document.querySelector ('#form-title');
-const formDate = document.querySelector ('#form-date');
-const btnNewProject = document.querySelector ('#btnModal');
-const btnSubmit = document.querySelector ('#btn-newProject');
-
 
 btnNewProject.addEventListener('click', () => {
     btnSubmit.disabled = true;
@@ -65,23 +70,11 @@ btnNewProject.addEventListener('click', () => {
 //Validation Form
 
 formTitle.addEventListener('blur', () => {
-    if(formTitle.value.length > 0){
-        formTitle.classList.remove("border-danger");
-        enableBtn(formTitle.value, formDate.value);
-      } else {
-        formTitle.classList.add("border-danger");
-        enableBtn(formTitle.value, formDate.value);
-      }
+    validationForm(formTitle);
 });
 
 formDate.addEventListener('blur', () => {
-    if(formDate.value.length > 0){
-        formDate.classList.remove("border-danger");
-        enableBtn(formTitle.value, formDate.value);
-      } else {
-        formDate.classList.add("border-danger");
-        enableBtn(formTitle.value, formDate.value);
-      }
+    validationForm(formDate);
 });
 
 //Submit Data
@@ -95,8 +88,5 @@ formProject.addEventListener('submit', (e) => {
     };
 
     setLocalStorage(projects);
-    reset();
-    Main('Home');
-    Home(getLocalStorage());
-    AddProject(getLocalStorage());
+    app('Home');
 });

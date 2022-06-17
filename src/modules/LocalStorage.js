@@ -1,13 +1,11 @@
-import Home from './Home';
-import AddProject from './AddProject';
-import {reset, enableBtn} from './Functions';
+import {reset,app} from './Functions';
 import Main from './Main';
 
 const setLocalStorage = (object) => {
     
     let data = getLocalStorage();
     
-    if (data != null){
+    if (data){
         data.push(object);
 
         return localStorage.setItem("Project",JSON.stringify(data));
@@ -34,11 +32,7 @@ const deleteLocalStorage = (newObject) => {
         newObject.forEach(element => {
             setLocalStorage(element);
         });
-    
-        reset();
-        Main('Home'); 
-        Home(getLocalStorage());
-        AddProject(getLocalStorage());
+        app('Home');
     } else {
         window.localStorage.clear();
         reset();

@@ -1,7 +1,6 @@
-import {reset, enableBtn} from './Functions';
 import {deleteLocalStorage} from './LocalStorage';
 
-const Home = (data) => {
+const Render = (data) => {
     
     data.forEach( element => {
         const content = document.querySelector('#main-container');
@@ -26,10 +25,9 @@ const Home = (data) => {
 
             const elementOnClick = e.target.parentElement.children[0].textContent;
 
-            const prueba = data.filter(element => element.title != elementOnClick);
+            const newArray = data.filter(element => element.title != elementOnClick);
 
-            deleteLocalStorage(prueba);
-        
+            deleteLocalStorage(newArray); 
         });
  
         mainDiv.appendChild(projectTitle);
@@ -41,4 +39,4 @@ const Home = (data) => {
 
 }
 
-export default Home;
+export default Render;
